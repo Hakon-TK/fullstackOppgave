@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registreringsskjema</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer type="module" src="./app.js"></script>
+  </head>
+  <body>
+    <div>
+      <div>
+        <h1>Registreringskjema</h1>
+      </div>
+      <div>
+        <form id="registrationForm">
+          <label for="firstName">Navn:</label>
+          <input type="text" name="firstName" id="firstName" required />
+
+          <label for="lastName">Etternavn:</label>
+          <input type="text" name="lastName" id="lastName" required />
+
+          <label for="email">E-post:</label>
+          <input type="email" name="email" id="email" required />
+
+          <label for="phone">Telefon:</label>
+          <input type="text" name="phone" id="phone" required />
+
+          <label for="dateOfBirth">Fødselsdato:</label>
+          <input type="date" name="dateOfBirth" id="dateOfBirth" required />
+
+          <input
+            type="submit"
+            name="submit"
+            id="submit"
+            value="Send inn"
+            style="text-align: start; width: fit-content; padding: 5px"
+          />
+        </form>
+      </div>
+      <div>
+        <h2>Lagret data:</h2>
+        <table id="resultsTable">
+          <thead>
+            <tr>
+              <th>Fornavn</th>
+              <th>Etternavn</th>
+              <th>E-post</th>
+              <th>Telefon</th>
+              <th>Fødselsdato</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
+
+<!-- action="connect.php" method="POST" -->
