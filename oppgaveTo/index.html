@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kaffebar Bestillingssystem</title>
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Kaffebar Bestillingssystem</h1>
+
+      <!-- Drikkevalg -->
+      <div>
+        <h2>Tilgjengelige Drikker</h2>
+        <ul id="drink-list"></ul>
+      </div>
+
+      <!-- Tilleggvalg -->
+      <div>
+        <h2>Tilgjengelige Tillegg</h2>
+        <ul id="addon-list"></ul>
+      </div>
+
+      <!-- Bestillingsskjema -->
+      <form id="order-form">
+        <label for="drink">Velg en drikk:</label>
+        <select id="drink" required></select>
+
+        <label for="addons">Velg tillegg:</label>
+        <select id="addons" multiple></select>
+
+        <button type="submit">Bestill</button>
+      </form>
+
+      <!-- Ordresammendrag -->
+      <div class="order-summary">
+        <h2>Ordresammendrag</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Detaljer</th>
+              <th>Pris</th>
+            </tr>
+          </thead>
+          <tbody id="order-summary-body"></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="switch">
+      <a href="../oppgaveEn/index.html"
+        ><button class="switchButton">Gå til Oppgave 1</button></a
+      >
+    </div>
+  </body>
+</html>

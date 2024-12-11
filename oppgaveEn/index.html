@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registreringsskjema</title>
+    <script defer src="app.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Registreringsskjema</h1>
+
+    <form id="registrationForm">
+      <label for="firstName">Fornavn:</label>
+      <input type="text" id="firstName" name="firstName" required />
+
+      <label for="lastName">Etternavn:</label>
+      <input
+        type="text"
+        id="lastName"
+        name="lastName"
+        pattern="^[^ ]+$"
+        required
+      />
+
+      <label for="email">E-post:</label>
+      <input type="email" id="email" name="email" />
+
+      <label for="phone">Telefon:</label>
+      <input
+        type="text"
+        id="phone"
+        name="phone"
+        pattern="^[49][0-9]{7}$"
+        required
+      />
+
+      <label for="birthDate">Fødselsdato:</label>
+      <input type="date" id="birthDate" name="birthDate" required />
+
+      <button type="submit">Registrer</button>
+    </form>
+
+    <h2>Registrerte data</h2>
+    <table id="dataTable">
+      <thead>
+        <tr>
+          <th>Fornavn</th>
+          <th>Etternavn</th>
+          <th>E-post</th>
+          <th>Telefon</th>
+          <th>Fødselsdato</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Data fra databasen vil vises her -->
+      </tbody>
+    </table>
+    <div class="switch">
+      <a href="../oppgaveTo/index.html"
+        ><button class="switchButton">Gå til Oppgave 2</button></a
+      >
+    </div>
+  </body>
+</html>
