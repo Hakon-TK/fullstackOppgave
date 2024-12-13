@@ -6,4 +6,4 @@ Bruksanvisning:
 1. Plasser 'fullstackOppgave' folder inne i ../xampp/htdocs
 2. Kjør Apache og MySQL server gjennom XAMPP kontrollpanel
 3. Inne på phpmyadmin, importer script.sql fra både oppgaveEn folder og oppgaveTo folder
-4. I en nettleser, skriv 'localhost/fullstackOppgave/oppgaveEn
+4. I en nettleser, gå til 'localhost/fullstackOppgave/oppgaveEn
