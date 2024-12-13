@@ -5,7 +5,7 @@ body {
   background-color: #f4f4f4;
 }
 
-.container {
+#container {
   max-width: 800px;
   margin: 20px auto;
   background: #fff;
@@ -16,7 +16,6 @@ body {
 
 h1 {
   text-align: center;
-  color: #333;
 }
 
 form {
@@ -49,23 +48,23 @@ button:hover {
   background-color: #0056b3;
 }
 
-.order-summary {
+#order-summary {
   margin-top: 20px;
 }
 
-.order-summary table {
+#order-summary table {
   width: 100%;
   border-collapse: collapse;
 }
 
-.order-summary th,
-.order-summary td {
+#order-summary th,
+#order-summary td {
   border: 1px solid #ccc;
   padding: 10px;
   text-align: left;
 }
 
-.order-summary th {
+#order-summary th {
   background-color: #007bff;
   color: #fff;
 }
@@ -78,4 +77,21 @@ button:hover {
 .switchButton {
   padding: 20px;
   margin-bottom: 20px;
+}
+
+#nightModeToggle {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  height: 50px;
+  width: 50px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#nightModeToggleImage {
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
 }

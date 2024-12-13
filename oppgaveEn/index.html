@@ -4,12 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Registreringsskjema</title>
-    <script defer src="app.js"></script>
+    <script type="module" defer src="app.js"></script>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div id="nightModeToggle">
+      <img id="nightModeToggleImage" src="./images/lightMode.png" alt="" />
+    </div>
+
     <h1>Registreringsskjema</h1>
 
+    <!-- Skjema for registrering av brukerinformasjon -->
     <form id="registrationForm">
       <label for="firstName">Fornavn:</label>
       <input type="text" id="firstName" name="firstName" required />
@@ -41,6 +46,7 @@
       <button type="submit">Registrer</button>
     </form>
 
+    <!-- Tabell for visning av registrerte brukere -->
     <h2>Registrerte data</h2>
     <table id="dataTable">
       <thead>
@@ -56,10 +62,12 @@
         <!-- Data fra databasen vil vises her -->
       </tbody>
     </table>
+
+    <!-- Knapp/link til neste oppgave -->
     <div class="switch">
-      <a href="../oppgaveTo/index.html"
-        ><button class="switchButton">Gå til Oppgave 2</button></a
-      >
+      <a href="../oppgaveTo/index.html">
+        <button class="switchButton">Gå til Oppgave 2</button>
+      </a>
     </div>
   </body>
 </html>

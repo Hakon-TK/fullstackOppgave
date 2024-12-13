@@ -4,11 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kaffebar Bestillingssystem</title>
-    <script defer src="script.js"></script>
+    <script type="module" defer src="./script.js"></script>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container">
+    <div id="nightModeToggle">
+      <img id="nightModeToggleImage" src="./images/lightMode.png" alt="" />
+    </div>
+
+    <div id="container">
       <h1>Kaffebar Bestillingssystem</h1>
 
       <!-- Drikkevalg -->
@@ -35,7 +39,7 @@
       </form>
 
       <!-- Ordresammendrag -->
-      <div class="order-summary">
+      <div id="order-summary">
         <h2>Ordresammendrag</h2>
         <table>
           <thead>
@@ -48,6 +52,8 @@
         </table>
       </div>
     </div>
+
+    <!-- Knapp/link til forrige oppgave -->
     <div class="switch">
       <a href="../oppgaveEn/index.html"
         ><button class="switchButton">Gå til Oppgave 1</button></a

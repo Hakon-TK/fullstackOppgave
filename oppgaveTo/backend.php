@@ -1,17 +1,17 @@
 <?php
-// Database Configuration
+// Konfigurasjon for database
 $host = "localhost";
 $username = "root";
 $password = "";
 $dbname = "coffeeShop";
 
-// Establish database connection
+// Opprett forbindelse til databasen
 $conn = new mysqli($host, $username, $password, $dbname);
 if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+    die("Tilkobling mislyktes: " . $conn->connect_error);
 }
 
-// Drink Class
+// Klasse for å håndtere drikker
 class Drink {
     private $conn;
 
@@ -20,21 +20,23 @@ class Drink {
     }
 
     public function create($name, $price) {
+        // Validering av inputdata før lagring
         if (empty($name) || $price <= 0) {
-            return "Invalid drink data.";
+            return "Ugyldig informasjon for drikk.";
         }
         $stmt = $this->conn->prepare("INSERT INTO drinks (name, price) VALUES (?, ?)");
         $stmt->bind_param("sd", $name, $price);
-        return $stmt->execute() ? "Drink added successfully." : "Error adding drink.";
+        return $stmt->execute() ? "Drikk lagt til." : "Feil ved lagring av drikk.";
     }
 
     public function getAll() {
+        // Henter alle drikker fra databasen
         $result = $this->conn->query("SELECT * FROM drinks");
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 }
 
-// AddOn Class
+// Klasse for å håndtere tillegg
 class AddOn {
     private $conn;
 
@@ -44,20 +46,21 @@ class AddOn {
 
     public function create($name, $price) {
         if (empty($name)) {
-            return "Invalid add-on data.";
+            return "Ugyldig informasjon for tillegg.";
         }
         $stmt = $this->conn->prepare("INSERT INTO addOns (name, price) VALUES (?, ?)");
         $stmt->bind_param("sd", $name, $price);
-        return $stmt->execute() ? "Add-on added successfully." : "Error adding add-on.";
+        return $stmt->execute() ? "Tillegg lagt til." : "Feil ved lagring av tillegg.";
     }
 
     public function getAll() {
+        // Henter alle tillegg fra databasen
         $result = $this->conn->query("SELECT * FROM addOns");
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 }
 
-// Order Class
+// Klasse for å håndtere bestillinger
 class Order {
     private $conn;
 
@@ -66,27 +69,30 @@ class Order {
     }
 
     public function create($details, $totalPrice) {
+        // Validering av inputdata før lagring
         if (empty($details) || $totalPrice <= 0) {
-            return "Invalid order data.";
+            return "Ugyldig informasjon for bestilling.";
         }
         $stmt = $this->conn->prepare("INSERT INTO orders (details, totalPrice) VALUES (?, ?)");
         $stmt->bind_param("sd", $details, $totalPrice);
-        return $stmt->execute() ? "Order placed successfully." : "Error placing order.";
+        return $stmt->execute() ? "Bestilling opprettet." : "Feil ved oppretting av bestilling.";
     }
 
     public function delete($id) {
+        // Sletting av bestilling basert på ID
         $stmt = $this->conn->prepare("DELETE FROM orders WHERE id = ?");
         $stmt->bind_param("i", $id);
-        return $stmt->execute() ? "Order deleted successfully." : "Error deleting order.";
+        return $stmt->execute() ? "Bestilling slettet." : "Feil ved sletting av bestilling.";
     }
 
     public function getAll() {
+        // Henter alle bestillinger sortert etter opprettelsesdato
         $result = $this->conn->query("SELECT * FROM orders ORDER BY createdAt DESC");
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 }
 
-// API Example Usage
+// Håndtering av POST-forespørsler
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $action = $_POST['action'];
 
@@ -105,6 +111,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
+// Håndtering av GET-forespørsler
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $action = $_GET['action'];
 

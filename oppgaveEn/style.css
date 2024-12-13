@@ -57,7 +57,7 @@ button:hover {
   margin: 20px auto;
   border-collapse: collapse;
   background: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
 }
 
 #dataTable th,
@@ -84,4 +84,20 @@ button:hover {
 .switchButton {
   padding: 20px;
   margin-bottom: 20px;
+}
+
+#nightModeToggle {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  height: 50px;
+  width: 50px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+#nightModeToggleImage {
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
 }
